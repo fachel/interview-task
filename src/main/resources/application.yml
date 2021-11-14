@@ -1,4 +1,22 @@
 spring:
   application:
     name: interview-task
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${spring.datasource.host}:${spring.datasource.port}/${spring.datasource.dbname}
+    username: ${spring.datasource.username}
+    password: ${spring.datasource.password}
 
+---
+spring:
+  datasource:
+    host: localhost
+    port: 5432
+    dbname: service
+    username: interviewer
+    password: three_tasks
+  jpa:
+    show-sql: true
+
+server:
+  port: 8082

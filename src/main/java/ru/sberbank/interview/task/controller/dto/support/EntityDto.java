@@ -3,10 +3,12 @@ package ru.sberbank.interview.task.controller.dto.support;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Date;
 
 @Data
+@EqualsAndHashCode(exclude = "id")
 public class EntityDto {
 
     @JsonProperty("entityId")

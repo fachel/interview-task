@@ -3,7 +3,7 @@ package ru.sberbank.interview.task.exception;
 import lombok.Getter;
 
 @Getter
-public class MyException extends RuntimeException {
+public class MyException extends Exception {
 
     private final String message;
     private final String details;

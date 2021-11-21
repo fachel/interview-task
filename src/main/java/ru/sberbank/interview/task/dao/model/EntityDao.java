@@ -1,17 +1,20 @@
 package ru.sberbank.interview.task.dao.model;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 import ru.sberbank.interview.task.controller.dto.support.EntityDto;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "ENTITY")
-@Data
-@EqualsAndHashCode(exclude = { "id" })
-public class EntityDao {
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+public class EntityDao implements Serializable {
 
     @Id
     @Column(name = "ID")

@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import ru.sberbank.interview.task.controller.dto.res.GetListRes;
 import ru.sberbank.interview.task.controller.dto.support.EntityDto;
+import ru.sberbank.interview.task.exception.MyException;
 import ru.sberbank.interview.task.service.Service;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class ServiceController {
     private final Service service;
 
     @GetMapping("list")
-    public List<EntityDto> getEntities(@RequestHeader("ids") List<Long> ids){
+    public List<EntityDto> getEntities(@RequestHeader("ids") List<Long> ids) throws MyException {
         return service.getEntitiesByIds(ids);
     }
 
@@ -28,7 +29,7 @@ public class ServiceController {
     }
 
     @GetMapping("list/entities/{sysname}")
-    public GetListRes getEntitiesBySysname(@PathVariable(value = "sysname") String sysname){
+    public GetListRes getEntitiesBySysname(@PathVariable(value = "sysname") String sysname) throws MyException {
         return service.getList(sysname);
     }
 
